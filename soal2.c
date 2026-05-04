@@ -96,13 +96,16 @@ int main() {
         scanf(" %d", &temp);
         insert(listM, temp);
     }
-
+    //printf("\n"); printList(listN); printList(listM);
 
     // PROCESS
     merge = sortMerge(listN, listM);
 
     // OUTPUT
     printf("MERGED ");
+    if ((N == 0) && (M == 0)) {
+        printf("EMPTY\n");
+    }
     printList(listM);
 
     return 0;
