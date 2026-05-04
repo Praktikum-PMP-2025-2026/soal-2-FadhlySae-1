@@ -66,6 +66,10 @@ struct node* sortMerge(struct node* a, struct node* b) { // [2]
     } else if (a->data == b->data) {
         result = a;
         //printf("%d\n", a->data);
+        if (b->data != 0) {
+            insert(result, b->data);
+        }
+        //printf("%d\n", b->data);
         result->next = sortMerge(a->next, b->next);
     }
     else {
