@@ -102,6 +102,7 @@ int main() {
     merge = sortMerge(listN, listM);
 
     // OUTPUT
+    printf("MERGED ");
     printList(listM);
 
     return 0;
