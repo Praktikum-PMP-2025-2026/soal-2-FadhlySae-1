@@ -59,13 +59,22 @@ struct node* sortMerge(struct node* a, struct node* b) { // [2]
         return (a);
     }
 
-    if (a->data <= b->data) {
+    if (a->data < b->data) {
         result = a;
+        //printf("%d\n", a->data);
         result->next = sortMerge(a->next, b);
-    } else {
+    } else if (a->data == b->data) {
+        result = a;
+        //printf("%d\n", a->data);
+        result->next = sortMerge(a->next, b->next);
+    }
+    else {
         result = b;
+        //printf("%d\n", b->data);
         result->next = sortMerge(a, b->next);
     }
+    //printf("RESULT: ");
+    //printList(result);
     return result;
 }
 
@@ -106,7 +115,7 @@ int main() {
     if ((N == 0) && (M == 0)) {
         printf("EMPTY\n");
     }
-    printList(listM);
+    printList(merge);
 
     return 0;
 }
